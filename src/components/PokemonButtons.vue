@@ -1,23 +1,13 @@
 <script setup lang="ts">
 import Button from 'primevue/button'
 import { computed } from 'vue'
+import type { PokemonType } from '../types/pokemon'
 
-const props = defineProps({
-  type: {
-    type: String,
-    required: true,
-    validator: (val: string) =>
-      [
-        'normal', 'fire', 'water', 'electric', 'grass', 'ice',
-        'fighting', 'poison', 'ground', 'flying', 'psychic',
-        'bug', 'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
-      ].includes(val),
-  },
-  label: {
-    type: String,
-    required: true,
-  },
-})
+const props = defineProps<{
+  type: PokemonType
+  label: string
+}>()
+ 
 
 const bgClass = computed(() => `bg-pokemon-${props.type}-500`)
 const hoverClass = computed(() => `hover:bg-pokemon-${props.type}-700`)
