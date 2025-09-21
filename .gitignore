@@ -28,5 +28,8 @@ dist-ssr
 *storybook.log
 storybook-static/
 .storybook/
-src/**/*.stories.@(js|jsx|ts|tsx|mdx)
+src/**/*.stories.ts
 src/stories/
+
+# Claude.md
+CLAUDE.md

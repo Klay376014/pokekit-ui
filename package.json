@@ -17,7 +17,8 @@
         "default": "./dist/pokekit-ui.umd.cjs"
       }
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/pokekit-ui.css",
+    "./pure.css": "./dist/pokekit-ui-pure.css"
   },
   "files": [
     "dist"
@@ -25,7 +26,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "build-lib": "vite build --mode lib && vue-tsc -p tsconfig.lib.json && node -e \"require('fs').copyFileSync('dist/index.d.ts', 'dist/index.d.mts')\"",
+    "build-lib": "vite build --mode lib && vue-tsc -p tsconfig.lib.json && node -e \"require('fs').copyFileSync('dist/index.d.ts', 'dist/index.d.mts')\" && bun run build-css",
+    "build-css": "node scripts/build-css-only.js",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -39,7 +41,9 @@
     "components",
     "primevue",
     "tailwind",
-    "typescript"
+    "typescript",
+    "pure-css",
+    "standalone"
   ],
   "author": "klay",
   "license": "MIT",

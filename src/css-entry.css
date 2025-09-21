@@ -1,0 +1,7 @@
+/* PokekitUI 純 CSS 入口檔案 */
+@import './style.css';
+
+/* 引入所有 Tailwind CSS 層級 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
